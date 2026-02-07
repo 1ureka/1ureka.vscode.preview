@@ -1,0 +1,61 @@
+{
+  "name": "1ureka-vscode-preview",
+  "author": "1ureka",
+  "publisher": "1ureka",
+  "description": "A Visual Studio Code extension developed for personal use.",
+  "version": "0.1.0",
+  "main": "./dist/extension.js",
+  "type": "module",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "1ureka.vscode.preview.image",
+        "displayName": "圖片檢視器",
+        "priority": "default",
+        "selector": [
+          {
+            "filenamePattern": "*.{jpg,jpeg,png,gif,bmp,webp,tiff,tif}"
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "compile": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@vscode/codicons": "^0.0.43",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.19.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "@types/vscode": "^1.106.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "@vscode/vsce": "^3.7.0",
+    "colord": "^2.9.3",
+    "esbuild": "^0.27.0",
+    "eslint": "^9.39.1",
+    "fs-extra": "^11.3.2",
+    "node-html-parser": "^7.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-zoom-pan-pinch": "^3.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15",
+    "zustand": "^5.0.8"
+  }
+}
